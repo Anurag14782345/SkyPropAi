@@ -31,10 +31,10 @@ def generate(input):
 
 
 st.title("SkyTrade AI - Air-rights encyclopedia ")
-st.write("Provide the details of your legal case to get IPC suggestions and explanations.")
+st.write("Provide the details of your legal case to get legal suggestions and explanations.")
 
 pre = "Consider the air rights questions below "
-post = " suggest the answer and also what right is involved"
+post = " suggest the answer and also what right/rights is/are involved"
 
 case_description = st.text_area("Explain your case here")
 
@@ -42,7 +42,7 @@ if st.button("Generate Suggestion"):
     if case_description:
         prompt = pre + case_description + post
         gen = generate(prompt)
-        st.write("### Suggested IPCs and Explanation")
+        st.write("### Suggested rights and Explanation")
         st.write(gen)
     else:
         st.write("Please enter the details of your case.")
